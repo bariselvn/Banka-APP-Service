@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7B8B826-CA6B-435C-AF22-01FD61A98AE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BankaDAL</RootNamespace>
+    <AssemblyName>BankaDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\EftHavaleContext.cs" />
+    <Compile Include="Context\FaturaIslemContext.cs" />
+    <Compile Include="Context\HesapContext.cs" />
+    <Compile Include="Context\HesapIslemlerContext.cs" />
+    <Compile Include="Context\HıslemContext.cs" />
+    <Compile Include="Context\IContext.cs" />
+    <Compile Include="Context\MusteriContext.cs" />
+    <Compile Include="Context\OgsContext.cs" />
+    <Compile Include="Context\OgsIslemContext.cs" />
+    <Compile Include="Context\OıslemContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Abstract\IEftHavaleRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IFaturaIslemRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IHesapRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IHesapIslemlerRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IHıslemRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IMusteriRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IOgsIslemRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IOgsRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IOıslemlerRepositories.cs" />
+    <Compile Include="Repositories\Abstract\IRepositories.cs" />
+    <Compile Include="Repositories\Concrate\EftHavaleRepositories.cs" />
+    <Compile Include="Repositories\Concrate\FaturaIslemRepositories.cs" />
+    <Compile Include="Repositories\Concrate\HesapIslemlerRepositories.cs" />
+    <Compile Include="Repositories\Concrate\HesapRepositories.cs" />
+    <Compile Include="Repositories\Concrate\HıslemRepositories.cs" />
+    <Compile Include="Repositories\Concrate\MusteriRepositories.cs" />
+    <Compile Include="Repositories\Concrate\OgsIslemRepositories.cs" />
+    <Compile Include="Repositories\Concrate\OgsRepositories.cs" />
+    <Compile Include="Repositories\Concrate\OıslemlerRepositories.cs" />
+    <Compile Include="Repositories\Concrate\Repository.cs" />
+    <Compile Include="Repositories\UnitOfWorks\IUnitOfWorks.cs" />
+    <Compile Include="Repositories\UnitOfWorks\UnitOfWorks.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankaData\BankaData.csproj">
+      <Project>{1c6f7c3a-d020-44b7-a2a6-f0824eaab702}</Project>
+      <Name>BankaData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
